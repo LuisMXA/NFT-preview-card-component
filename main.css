@@ -1,0 +1,168 @@
+/* Custom properties */
+:root {
+     --Soft-blue: hsl(215, 51%, 70%);
+     --Cyan: hsl(178, 100%, 50%);
+     --Cyan-transparent: hsla(178, 100%, 50%, 0.45);
+     --Very-dark-blue-main: hsl(217, 54%, 11%);
+     --Very-dark-blue-card: hsl(216, 50%, 16%);
+     --Very-dark-blue-line: hsl(215, 32%, 27%);
+     --White: hsl(0, 0%, 100%);
+}
+
+/* General */
+* {
+     box-sizing: border-box;
+}
+
+html, body {
+     padding: 0;
+     margin: 0;
+     height: 100%;
+}
+
+body {
+     font-family: 'Outfit';
+     font-size: 18px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     background-color: var(--Very-dark-blue-main);
+}
+
+/* Main */
+.main {
+     max-width: 365px;
+}
+
+/* NFT container styles */
+.nft {
+     display: grid;
+     grid-template-rows: auto;
+     grid-template-columns: auto auto;
+     background-color: var(--Very-dark-blue-card);
+     padding: 1.5rem;
+     border-radius: .8rem;
+     grid-template-areas: 
+     "preview preview"
+     "title title"
+     "description description "
+     "amount time "
+     "creator creator"
+     ;
+}
+
+/* Image and overlay styles */
+.image-container {
+     position: relative;
+     grid-area: preview;
+     cursor: pointer;
+}
+
+.overlay {
+     position: absolute;
+     width: 100%;
+     height: 100%;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50% , -50%);
+     border-radius: .5rem;
+     background: var(--Cyan-transparent);
+     visibility: hidden;
+}
+
+.image-container:hover .overlay{
+     visibility: visible;
+}
+
+.equilibrium-img {
+     width: 100%;
+     height: 100%;
+     border-radius: .5rem;
+}
+
+.icon-view {
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+}
+
+/* Info styles */
+.title {
+     grid-area: title;
+     cursor: pointer;
+}
+
+.description {
+     margin: 0;
+     grid-area: description;
+}
+
+.eth-amount {
+     display: flex;
+     align-items: center;
+     margin: 1.5rem 0 1.5rem 0;
+     grid-area: amount;
+     color: var(--Cyan);
+}
+
+.icon-eth {
+     margin-right: .4rem;
+}
+
+.time-elapsed {
+     display: flex;
+     align-items: center;
+     margin: 1.5rem 0 1.5rem 0;
+     grid-area: time;
+     justify-self: end;
+}
+
+.icon-clock {
+     margin-right: .4rem;
+}
+
+.avatar {
+     width: 2.5rem;
+     border-radius: 50%;
+     border: 1px solid var(--White);
+     margin-right: 1rem;
+}
+
+.creator {
+     display: flex;
+     align-items: center;
+     grid-area: creator;
+     padding: 1rem 0 .5rem 0;
+     border-top: 1px solid var(--Very-dark-blue-line);
+     font-size: 16px;
+}
+
+.author-name {
+     text-decoration: none;
+     margin-left: .3rem;
+     cursor: pointer;
+}
+
+.title , .author-name{
+     color: var(--White);
+}
+
+.description , .time-elapsed , .creator{
+     color: var(--Soft-blue);
+}
+
+.author-name:hover , .title:hover{
+     color: var(--Cyan);
+}
+
+@media screen and (max-width: 375px){
+     
+     body {
+          font-size: 16px;
+     }
+
+     .main {
+          max-width: 320px;
+     }
+}
