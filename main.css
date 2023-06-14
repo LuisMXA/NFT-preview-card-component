@@ -104,6 +104,8 @@ body {
      margin: 1.5rem 0 1.5rem 0;
      grid-area: amount;
      color: var(--Cyan);
+     font-size: 16px;
+     font-weight: 400;
 }
 
 .icon-eth {
@@ -116,6 +118,7 @@ body {
      margin: 1.5rem 0 1.5rem 0;
      grid-area: time;
      justify-self: end;
+     font-size: 16px;
 }
 
 .icon-clock {
